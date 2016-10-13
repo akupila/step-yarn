@@ -1,5 +1,5 @@
 name: yarn
-version: 0.1.0
+version: 0.2.0
 description: yarn install
 properties:
   production:
@@ -10,7 +10,7 @@ properties:
     type: bool
     default: true
     required: false
-  no-cache:
+  cache:
     type: bool
-    default: false
+    default: true
     required: false

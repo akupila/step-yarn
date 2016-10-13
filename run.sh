@@ -2,7 +2,12 @@
 
 YARN=yarn
 
-if [ "$WERCKER_YARN_NO_CACHE" != "true" ]; then
+if ! hash yarn 2>/dev/null; then
+  echo "Installing yarn..."
+  npm install -g yarn
+fi
+
+if [ "$WERCKER_YARN_CACHE" == "true" ]; then
   YARN="HOME=$WERCKER_CACHE_DIR $YARN"
 fi
 
@@ -14,4 +19,5 @@ if [ "$WERCKER_YARN_PURE_LOCKFILE" == "true" ]; then
   YARN="$YARN --pure-lockfile"
 fi
 
-$YARN
+echo "$YARN"
+eval $YARN
