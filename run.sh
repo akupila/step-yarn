@@ -19,5 +19,7 @@ if [ "$WERCKER_YARN_PURE_LOCKFILE" == "true" ]; then
   YARN="$YARN --pure-lockfile"
 fi
 
+YARN="$YARN $WERCKER_YARN_OPTIONS"
+
 echo "$YARN"
 eval $YARN

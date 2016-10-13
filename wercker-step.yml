@@ -1,16 +1,15 @@
 name: yarn
-version: 0.2.1
+version: 0.3.1
 description: yarn install
 properties:
   production:
     type: bool
     default: false
     required: false
-  pure-lockfile:
-    type: bool
-    default: true
-    required: false
   cache:
     type: bool
     default: true
+    required: false
+  options:
+    type: string
     required: false
